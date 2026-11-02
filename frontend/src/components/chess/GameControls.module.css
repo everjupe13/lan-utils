@@ -1,0 +1,11 @@
+.gameControls {
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+@media (max-width: 700px) {
+  .gameControls {
+    padding: 0 3px;
+  }
+}

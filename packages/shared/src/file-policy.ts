@@ -1,0 +1,168 @@
+/** Browser-safe policy shared by the file picker and the authoritative server validation. */
+export const FILE_EXTENSION_GROUPS = {
+  images: [
+    '.png',
+    '.jpg',
+    '.jpeg',
+    '.jfif',
+    '.gif',
+    '.webp',
+    '.bmp',
+    '.tif',
+    '.tiff',
+    '.avif',
+    '.heic',
+    '.heif',
+    '.ico',
+  ],
+  video: [
+    '.mp4',
+    '.m4v',
+    '.mov',
+    '.webm',
+    '.mkv',
+    '.avi',
+    '.mpg',
+    '.mpeg',
+    '.3gp',
+    '.ogv',
+    '.mts',
+    '.m2ts',
+  ],
+  audio: [
+    '.mp3',
+    '.wav',
+    '.ogg',
+    '.oga',
+    '.m4a',
+    '.aac',
+    '.flac',
+    '.opus',
+    '.aif',
+    '.aiff',
+    '.wma',
+    '.amr',
+  ],
+  documents: ['.pdf', '.docx', '.xlsx', '.pptx', '.odt', '.ods', '.odp', '.rtf'],
+  text: ['.txt', '.md', '.markdown', '.json', '.csv', '.tsv', '.log', '.xml', '.html'],
+  archives: [
+    '.zip',
+    '.7z',
+    '.rar',
+    '.tar',
+    '.gz',
+    '.bz2',
+    '.xz',
+    '.tgz',
+    '.tbz',
+    '.tbz2',
+    '.txz',
+    '.zst',
+    '.tzst',
+  ],
+} as const;
+
+export const ALLOWED_FILE_EXTENSIONS: readonly string[] = Object.freeze(
+  Object.values(FILE_EXTENSION_GROUPS).flat(),
+);
+const allowed = new Set(ALLOWED_FILE_EXTENSIONS);
+
+// Also reject executable/script suffixes hidden before a permitted final extension.
+const dangerousParts = new Set([
+  'exe',
+  'com',
+  'dll',
+  'sys',
+  'scr',
+  'cpl',
+  'ocx',
+  'pif',
+  'efi',
+  'msi',
+  'msp',
+  'mst',
+  'msix',
+  'msixbundle',
+  'appx',
+  'appxbundle',
+  'app',
+  'dmg',
+  'pkg',
+  'mpkg',
+  'command',
+  'dylib',
+  'so',
+  'bundle',
+  'kext',
+  'bat',
+  'cmd',
+  'ps1',
+  'psm1',
+  'psd1',
+  'vbs',
+  'vbe',
+  'js',
+  'jse',
+  'mjs',
+  'cjs',
+  'wsf',
+  'wsh',
+  'hta',
+  'lnk',
+  'url',
+  'sh',
+  'bash',
+  'zsh',
+  'ksh',
+  'fish',
+  'csh',
+  'scpt',
+  'scptd',
+  'applescript',
+  'workflow',
+  'action',
+  'elf',
+  'bin',
+  'run',
+  'deb',
+  'rpm',
+  'apk',
+  'aab',
+  'ipa',
+  'jar',
+  'war',
+  'class',
+  'py',
+  'pyw',
+  'rb',
+  'pl',
+  'php',
+  'docm',
+  'dotm',
+  'xlsm',
+  'xltm',
+  'xlam',
+  'xlsb',
+  'pptm',
+  'potm',
+  'ppam',
+  'ppsm',
+  'sldm',
+]);
+
+export function fileNameProblem(name: string): string | null {
+  const base = name.split(/[\\/]/).at(-1)!;
+  if (
+    !base ||
+    base !== base.trim() ||
+    /[\u0000-\u001f\u007f\u202a-\u202e\u2066-\u2069:]/u.test(base)
+  )
+    return 'Имя файла содержит недопустимые символы или пробелы по краям.';
+  const parts = base.toLowerCase().split('.');
+  if (parts.slice(1).some((part) => dangerousParts.has(part.trim())))
+    return 'Исполняемые файлы, установщики, скрипты и документы с макросами запрещены, включая двойные расширения.';
+  const extension = '.' + parts.at(-1);
+  if (parts.length < 2 || !parts.slice(0, -1).join('.') || !allowed.has(extension))
+    return 'Расширение файла не разрешено. Выберите изображение, видео, аудио, документ, архив или текстовый файл из белого списка.';
+  return null;
+}

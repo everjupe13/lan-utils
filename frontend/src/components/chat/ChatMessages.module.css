@@ -1,0 +1,93 @@
+.messages {
+  min-height: 320px;
+  height: min(55svh, 590px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+.empty {
+  margin: auto;
+  max-width: 300px;
+  text-align: center;
+  color: var(--muted);
+  padding: 35px 0;
+}
+.empty > span {
+  font-size: 36px;
+  color: #9bac8f;
+}
+.empty h3 {
+  font-size: 16px;
+  margin: 12px 0;
+  color: #64715b;
+}
+.empty p {
+  font-size: 12px;
+}
+.message {
+  width: fit-content;
+  max-width: 88%;
+  padding: 14px 16px 7px;
+  border: 1px solid #e2e6db;
+  border-radius: 9px 9px 9px 2px;
+  background: #f0f1e9;
+  flex-shrink: 0;
+  min-width: 140px;
+}
+.own {
+  align-self: flex-end;
+  background: #e8eedf;
+  border-color: #d9e4cc;
+  border-radius: 9px 9px 2px 9px;
+}
+.message header {
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 7px;
+}
+.message > header strong {
+  font-size: 10px;
+  font-weight: 500;
+  color: #687c59;
+  overflow-wrap: anywhere;
+}
+.message time {
+  font-size: 9px;
+  color: #919a87;
+  flex-shrink: 0;
+}
+.message > p {
+  font-size: 13px;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+.message a {
+  color: #335c47;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.message button {
+  font-size: 9px;
+  margin-top: 6px;
+  color: #89967b;
+}
+.copyError {
+  font-size: 11px;
+  color: #905f43;
+}
+@media (max-width: 760px) {
+  .messages {
+    padding: 18px 14px;
+    min-height: 300px;
+  }
+  .message {
+    max-width: 94%;
+  }
+}

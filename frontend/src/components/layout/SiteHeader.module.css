@@ -1,0 +1,83 @@
+.brand {
+  font-family: 'Manrope', system-ui, sans-serif;
+}
+.siteHeader {
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  gap: 24px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  font-size: 25px;
+  font-weight: 800;
+  letter-spacing: -1.1px;
+  line-height: 1.2;
+}
+.brandMark {
+  font-family: Georgia, serif;
+  font-size: 41px;
+  color: var(--green);
+}
+.brandCaption {
+  display: block;
+  font-family: 'Golos Text', sans-serif;
+  font-size: 8px;
+  letter-spacing: 2.2px;
+  font-weight: 500;
+  margin-top: 6px;
+}
+.headerRight {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+.menuLink {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+}
+.profileBadge {
+  font-size: 13px;
+  font-weight: 600;
+  border-left: 1px solid var(--line);
+  padding-left: 24px;
+}
+.profileBadge small {
+  display: block;
+  font-weight: 400;
+  color: var(--muted);
+  margin-top: 4px;
+}
+@media (max-width: 700px) {
+  .siteHeader {
+    min-height: 88px;
+    height: auto;
+    flex-wrap: wrap;
+    padding: 18px 0;
+  }
+  .brand {
+    font-size: 22px;
+    gap: 8px;
+  }
+  .brandCaption {
+    font-size: 7px;
+  }
+  .brandMark {
+    font-size: 35px;
+  }
+  .headerRight {
+    gap: 10px;
+  }
+  .profileBadge {
+    padding-left: 0;
+    border: 0;
+    font-size: 11px;
+    max-width: 110px;
+    overflow-wrap: anywhere;
+  }
+}

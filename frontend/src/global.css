@@ -1,0 +1,68 @@
+:root {
+  font-family: 'Golos Text', system-ui, sans-serif;
+  color: #242b28;
+  background: #f4f3ed;
+  font-synthesis: none;
+  font-weight: 400;
+  --green: #294f40;
+  --muted: #7b8078;
+  --line: #dddfd5;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+button,
+input {
+  font: inherit;
+}
+button,
+a,
+input {
+  -webkit-tap-highlight-color: transparent;
+}
+button {
+  cursor: pointer;
+}
+button:disabled {
+  cursor: default;
+  opacity: 0.45;
+}
+button,
+a,
+input {
+  outline-offset: 4px;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #589579;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+h1 {
+  font-size: 44px;
+  letter-spacing: -2px;
+  line-height: 1.2;
+  font-weight: 650;
+}
+h2 {
+  font-size: 24px;
+  letter-spacing: -0.7px;
+  font-weight: 650;
+}
+h3 {
+  font-size: 19px;
+}
+p {
+  line-height: 1.65;
+}

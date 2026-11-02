@@ -1,0 +1,56 @@
+.queue {
+  list-style: none;
+  padding: 0;
+  margin: 14px 0;
+  display: grid;
+  gap: 8px;
+}
+.queue li {
+  border: 1px solid #d9dfd1;
+  border-radius: 5px;
+  padding: 10px 12px;
+  background: #f4f6ee;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+.row > div:first-child {
+  min-width: 0;
+}
+.row strong {
+  display: block;
+  overflow-wrap: anywhere;
+  font-size: 11px;
+  font-weight: 500;
+}
+.row small {
+  display: block;
+  color: var(--muted);
+  margin-top: 5px;
+  font-size: 10px;
+}
+.actions {
+  display: flex;
+  flex-shrink: 0;
+  gap: 12px;
+}
+.queue p {
+  color: #905f43;
+  font-size: 11px;
+  margin-top: 8px;
+}
+.queue progress {
+  display: block;
+  width: 100%;
+  height: 5px;
+  margin-top: 10px;
+  accent-color: var(--green);
+}
+@media (max-width: 700px) {
+  .row {
+    flex-wrap: wrap;
+  }
+}

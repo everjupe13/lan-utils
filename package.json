@@ -1,0 +1,36 @@
+{
+  "name": "chess-localhost",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/shared",
+    "frontend",
+    "backend"
+  ],
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "verify:deployment": "node scripts/verify-deployment.mjs",
+    "dev": "concurrently -k -n shared,server,client -c yellow,blue,green \"npm run dev -w @nearby/shared\" \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run check:boundaries && npm run build:shared && npm run build -w frontend && npm run build -w backend",
+    "start": "npm run start -w backend",
+    "test": "npm run check:boundaries && npm run build:shared && npm run test -w @nearby/shared && npm run test -w frontend && npm run test -w backend && node --import tsx --test tests/integration/*.test.ts",
+    "test:unit": "npm run check:boundaries && npm run build:shared && npm run test -w @nearby/shared && npm run test -w frontend && npm run test:unit -w backend && node --import tsx --test tests/integration/*.test.ts",
+    "test:integration": "npm run build:shared && npm run test:integration -w backend",
+    "typecheck": "npm run check:boundaries && npm run build:shared && npm run typecheck -w backend && npm run typecheck -w frontend",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "build:shared": "npm run build -w @nearby/shared",
+    "check:boundaries": "node scripts/check-boundaries.mjs",
+    "predev": "npm run check:boundaries && npm run build:shared",
+    "clean": "npm run clean -w @nearby/shared && npm run clean -w frontend && npm run clean -w backend",
+    "test:contracts": "npm run build:shared && node --import tsx --test tests/integration/*.test.ts"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "prettier": "^3.6.2",
+    "typescript": "~5.9.3",
+    "tsx": "^4.20.6"
+  }
+}

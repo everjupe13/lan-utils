@@ -1,0 +1,68 @@
+.welcomeLayout {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: center;
+  flex: 1;
+  padding: 76px 0 90px;
+}
+.welcomeCopy h1 {
+  font-size: 61px;
+  letter-spacing: -3px;
+  line-height: 1.13;
+  margin: 25px 0;
+}
+.welcomeCopy em {
+  font-style: normal;
+  color: #68826b;
+}
+.lead {
+  font-size: 15px;
+  color: #70766d;
+  max-width: 365px;
+}
+.welcomeBottom {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-top: 45px;
+  color: #8a8d83;
+}
+.welcomeBottom p {
+  font-size: 12px;
+}
+.decorPiece {
+  font-size: 49px;
+  font-family: Georgia, serif;
+  color: #9b9e8d;
+}
+@media (max-width: 1000px) {
+  .welcomeLayout {
+    gap: 35px;
+  }
+  .welcomeCopy h1 {
+    font-size: 48px;
+  }
+}
+@media (max-width: 700px) {
+  .welcomeLayout {
+    grid-template-columns: 1fr;
+    padding: 38px 0;
+    gap: 35px;
+  }
+  .welcomeCopy h1 {
+    font-size: 43px;
+    margin: 18px 0;
+    letter-spacing: -2px;
+  }
+  .welcomeCopy h1 br:nth-of-type(2) {
+    display: none;
+  }
+  .lead {
+    font-size: 13px;
+    max-width: 100%;
+  }
+  .welcomeBottom {
+    display: none;
+  }
+}

@@ -1,0 +1,49 @@
+.historyCard {
+  padding: 25px;
+}
+.historyCard header > span {
+  font-size: 10px;
+  color: var(--muted);
+}
+.historyScroll {
+  max-height: 280px;
+  overflow-y: auto;
+  margin-top: 17px;
+}
+.historyEmpty {
+  padding: 22px 0;
+  text-align: center;
+  font-size: 12px;
+}
+@media (max-width: 700px) {
+  .historyCard {
+    padding: 23px;
+  }
+  .historyScroll {
+    max-height: 190px;
+  }
+}
+.historyCard table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 12px;
+  text-align: left;
+  font-variant-numeric: tabular-nums;
+}
+.historyCard th {
+  font-size: 10px;
+  font-weight: 400;
+  color: var(--muted);
+  padding: 9px 10px;
+}
+.historyCard td {
+  padding: 9px 10px;
+  font-family: monospace;
+}
+.historyCard td:first-child {
+  color: #8c9482;
+  width: 20%;
+}
+.historyCard tbody tr:nth-child(odd) {
+  background: #eff1e9;
+}

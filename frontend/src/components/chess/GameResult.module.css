@@ -1,0 +1,19 @@
+.resultCard {
+  background: #e4ebdb;
+  border: 1px solid #cedbc2;
+  border-radius: 10px;
+  padding: 23px;
+  text-align: center;
+}
+.resultCard > span {
+  font-size: 27px;
+  color: #667d53;
+}
+.resultCard h2 {
+  font-size: 20px;
+  margin: 8px 0;
+}
+.resultCard p {
+  font-size: 12px;
+  color: #728065;
+}

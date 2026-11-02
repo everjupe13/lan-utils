@@ -1,0 +1,43 @@
+.playerBar {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  padding: 12px 0;
+}
+.avatar {
+  background: #e4e8da;
+  border-radius: 7px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  font-size: 14px;
+  color: #586747;
+}
+.avatarDark {
+  background: #344436;
+  color: #e2e9d5;
+}
+.playerBar strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.playerBar strong small {
+  font-size: 10px;
+  color: var(--muted);
+  font-weight: 400;
+}
+.playerBar > div > span {
+  display: block;
+  font-size: 10px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+.playerPresence {
+  margin-left: auto;
+  font-size: 10px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  color: var(--muted);
+}

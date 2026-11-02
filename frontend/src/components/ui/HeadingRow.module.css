@@ -1,0 +1,16 @@
+.sectionHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.sectionHeading h2 {
+  font-size: 18px;
+  letter-spacing: -0.4px;
+}
+.sectionHeading h2 span {
+  font-family: monospace;
+  color: #8a917f;
+  font-size: 11px;
+  margin-left: 12px;
+}

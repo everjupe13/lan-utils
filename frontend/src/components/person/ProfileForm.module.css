@@ -1,0 +1,53 @@
+.profileCard {
+  padding: 38px;
+}
+.profileCard h2 {
+  margin: 21px 0 12px;
+}
+.profileCard form {
+  margin-top: 30px;
+}
+.inputPrefix {
+  display: flex;
+  position: relative;
+}
+.inputPrefix > span {
+  position: absolute;
+  top: 22px;
+  left: 14px;
+  color: #92998b;
+  font-size: 15px;
+}
+.inputPrefix input {
+  padding-left: 35px;
+}
+.fieldHint {
+  font-size: 10px;
+  color: #90958a;
+  margin: 9px 0 25px;
+}
+.cardFootnote {
+  font-size: 10px;
+  text-align: center;
+  color: #94988d;
+  margin-top: 20px;
+}
+@media (max-width: 1000px) {
+  .profileCard {
+    padding: 28px;
+  }
+}
+@media (max-width: 700px) {
+  .profileCard {
+    padding: 26px;
+  }
+  .profileCard h2 {
+    font-size: 23px;
+  }
+}
+.profileCard label {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  margin-top: 20px;
+}

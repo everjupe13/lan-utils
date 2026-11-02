@@ -1,0 +1,11 @@
+.boardWrap {
+  position: relative;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  aspect-ratio: 1;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 4px 16px #2936200a;
+}

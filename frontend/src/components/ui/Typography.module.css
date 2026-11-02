@@ -1,0 +1,11 @@
+.eyebrow,
+.stepLabel {
+  font-size: 10px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  color: var(--green);
+}
+.muted {
+  color: var(--muted);
+  font-size: 13px;
+}

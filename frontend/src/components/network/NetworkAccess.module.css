@@ -1,0 +1,48 @@
+.network {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+  font-size: 12px;
+  min-width: 0;
+}
+.network summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none;
+  color: var(--green);
+}
+.network summary::-webkit-details-marker {
+  display: none;
+}
+.network summary span {
+  font-size: 19px;
+}
+.network p {
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 14px;
+}
+.links {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+.link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.link input {
+  flex: 1;
+  min-width: 150px;
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  padding: 10px;
+  background: #fcfcf8;
+  color: var(--green);
+  font-family: monospace;
+  font-size: 11px;
+}

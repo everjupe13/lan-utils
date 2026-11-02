@@ -1,0 +1,50 @@
+.thread {
+  min-width: 0;
+  border: 1px solid var(--line);
+  background: #fcfcf8;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.heading {
+  padding: 20px 24px;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  justify-content: space-between;
+}
+.heading h2 {
+  font-size: 18px;
+  overflow-wrap: anywhere;
+}
+.heading p {
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 10px;
+}
+.heading button {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.copyFallback {
+  padding: 12px 24px;
+  font-size: 11px;
+  color: #905f43;
+  border-bottom: 1px solid var(--line);
+}
+.copyFallback input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  margin-top: 10px;
+  font: inherit;
+}
+@media (max-width: 760px) {
+  .heading {
+    padding: 18px 15px;
+  }
+  .heading h2 {
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,136 @@
+.sidebar {
+  min-width: 0;
+}
+.identity {
+  padding-bottom: 22px;
+  border-bottom: 1px solid var(--line);
+}
+.identity summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  cursor: pointer;
+  font-size: 12px;
+}
+.identity summary::-webkit-details-marker {
+  display: none;
+}
+.identity summary > span {
+  overflow-wrap: anywhere;
+}
+.identity small {
+  color: var(--muted);
+  font-size: 10px;
+}
+.identity form {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+.section {
+  margin: 25px 0;
+}
+.section h2 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0;
+  margin-bottom: 12px;
+}
+.section h2 > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+.list {
+  display: grid;
+  gap: 4px;
+}
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 11px 9px;
+  color: inherit;
+  text-align: left;
+  font-size: 12px;
+}
+.item:hover:not(:disabled) {
+  background: #e9ede1;
+}
+.active {
+  background: #e4ebdd;
+  color: var(--green);
+  border-color: #d9e2ce;
+}
+.symbol {
+  font-size: 17px;
+  width: 18px;
+  flex-shrink: 0;
+  color: #7b8e6c;
+  text-align: center;
+}
+.itemText {
+  overflow-wrap: anywhere;
+  min-width: 0;
+}
+.unread {
+  margin-left: auto;
+  border-radius: 12px;
+  padding: 3px 6px;
+  background: var(--green);
+  color: white;
+  font-size: 9px;
+}
+.online {
+  width: 5px;
+  height: 5px;
+  background: #7d9a6c;
+  border-radius: 50%;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.caption {
+  font-size: 11px;
+  color: var(--muted);
+  margin: 5px 0 12px;
+}
+.create {
+  display: flex;
+  gap: 7px;
+  margin-top: 12px;
+}
+.create input {
+  margin: 0;
+  font-size: 11px;
+  padding: 10px;
+}
+.create button {
+  padding: 8px 12px;
+  min-height: 38px;
+}
+@media (max-width: 760px) {
+  .sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 20px;
+  }
+  .identity,
+  .sidebar > details:last-child {
+    grid-column: 1 / -1;
+  }
+  .section {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+  .list {
+    max-height: 160px;
+    overflow-y: auto;
+  }
+}

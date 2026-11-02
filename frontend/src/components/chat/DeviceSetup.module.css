@@ -1,0 +1,23 @@
+.setup {
+  max-width: 480px;
+  width: 100%;
+  margin: 36px auto 72px;
+  padding: 32px;
+}
+.setup h2 {
+  margin: 20px 0 12px;
+}
+.setup > p:not(:first-child) {
+  font-size: 13px;
+  color: var(--muted);
+}
+.setup form {
+  margin-top: 25px;
+}
+.setup label {
+  display: block;
+  font-size: 12px;
+}
+.setup form button {
+  margin-top: 18px;
+}

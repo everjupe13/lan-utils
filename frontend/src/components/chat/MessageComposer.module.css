@@ -1,0 +1,96 @@
+.composer {
+  border-top: 1px solid var(--line);
+  padding: 18px 22px;
+}
+.label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 10px;
+  color: var(--muted);
+}
+.controls {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+}
+.controls textarea {
+  width: 100%;
+  flex: 1;
+  min-width: 0;
+  resize: vertical;
+  min-height: 65px;
+  max-height: 200px;
+  border: 1px solid #d9dfd1;
+  border-radius: 6px;
+  padding: 12px;
+  font: inherit;
+  font-size: 13px;
+  background: white;
+  color: inherit;
+}
+.controls textarea:focus {
+  outline: 2px solid #66856c25;
+  border-color: #66856c;
+}
+.controls textarea::placeholder {
+  color: #a0a797;
+}
+.controls button {
+  white-space: nowrap;
+  gap: 5px;
+}
+.hint {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: 8px;
+  color: #9a9f91;
+  font-size: 9px;
+}
+.attachments {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+.attachments > span {
+  font-size: 9px;
+  color: var(--muted);
+}
+.fileInput {
+  display: none;
+}
+.attachments details {
+  flex-basis: 100%;
+  font-size: 10px;
+  color: var(--muted);
+}
+.attachments summary {
+  cursor: pointer;
+}
+.attachments details p {
+  margin-top: 7px;
+  overflow-wrap: anywhere;
+}
+.error {
+  font-size: 11px;
+  color: #905f43;
+  margin-top: 10px;
+}
+@media (max-width: 760px) {
+  .composer {
+    padding: 15px;
+  }
+  .controls {
+    align-items: stretch;
+    gap: 8px;
+  }
+  .controls button {
+    font-size: 10px;
+    padding: 10px;
+  }
+  .hint span:first-child {
+    max-width: 200px;
+  }
+}

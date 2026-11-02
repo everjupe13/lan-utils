@@ -1,0 +1,28 @@
+.siteFooter {
+  margin-top: auto;
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #909487;
+  gap: 16px;
+}
+.siteFooter > span:last-child {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+.footerStar {
+  color: #7e8c6a;
+  font-size: 18px;
+}
+@media (max-width: 700px) {
+  .siteFooter {
+    font-size: 9px;
+    line-height: 1.7;
+  }
+  .siteFooter > span:first-child {
+    max-width: 170px;
+  }
+}

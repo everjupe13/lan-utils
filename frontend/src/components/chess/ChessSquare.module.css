@@ -1,0 +1,115 @@
+.square {
+  position: relative;
+  border: 0;
+  border-radius: 0;
+  aspect-ratio: 1;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  overflow: hidden;
+  isolation: isolate;
+}
+.light {
+  background: #ecebd8;
+  color: #708266;
+}
+.dark {
+  background: #81966f;
+  color: #f3f1de;
+}
+.square.lastMove:before,
+.square.selected:before,
+.square.inCheck:before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: #d8d25780;
+}
+.square.selected:before {
+  background: #e3d244ba;
+}
+.square.inCheck:before {
+  background: #d064589e;
+}
+.square:focus-visible {
+  outline: 3px solid #364c31;
+  outline-offset: -3px;
+  z-index: 2;
+}
+.piece {
+  font-family: 'Arial Unicode MS', 'Apple Symbols', 'Segoe UI Symbol', 'DejaVu Sans', sans-serif;
+  font-size: clamp(25px, 5.1vw, 61px);
+  line-height: 1;
+  z-index: 1;
+  user-select: none;
+  pointer-events: none;
+}
+.whitePiece {
+  color: #fffdf2;
+  -webkit-text-stroke: 1.2px #363e30;
+  filter: drop-shadow(0 2px 1px #0003);
+}
+.blackPiece {
+  color: #2f382b;
+  -webkit-text-stroke: 0.6px #182214;
+  filter: drop-shadow(0 2px 1px #0002);
+}
+.coordinate {
+  position: absolute;
+  font-size: 10px;
+  font-weight: 600;
+  z-index: 2;
+  pointer-events: none;
+}
+.rank {
+  top: 5px;
+  left: 5px;
+}
+.file {
+  bottom: 3px;
+  right: 5px;
+}
+.target {
+  position: absolute;
+  width: 23%;
+  height: 23%;
+  border-radius: 50%;
+  background: #293e3860;
+  z-index: 2;
+  pointer-events: none;
+}
+.target.capture {
+  width: 88%;
+  height: 88%;
+  border: 5px solid #293e3860;
+  background: none;
+}
+@media (min-width: 1400px) {
+  .piece {
+    font-size: 64px;
+  }
+}
+@media (max-width: 1000px) {
+  .piece {
+    font-size: 5.4vw;
+  }
+}
+@media (max-width: 700px) {
+  .piece {
+    font-size: 9.5vw;
+  }
+  .coordinate {
+    font-size: 9px;
+  }
+  .rank {
+    left: 3px;
+    top: 3px;
+  }
+  .file {
+    right: 3px;
+    bottom: 2px;
+  }
+}

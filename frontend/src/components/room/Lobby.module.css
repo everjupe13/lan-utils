@@ -1,0 +1,124 @@
+.lobby {
+  padding: 52px 0 72px;
+}
+.pageHeading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 34px;
+  gap: 20px;
+}
+.pageHeading h1 {
+  margin-top: 13px;
+}
+.pageHeading > p {
+  text-align: right;
+}
+.lobbyActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 22px;
+}
+.createCard {
+  background: #e9ede1;
+  position: relative;
+  overflow: hidden;
+}
+.createCard h2 {
+  margin: 10px 0 13px;
+}
+.createCard p {
+  font-size: 13px;
+  color: #727d6a;
+  max-width: 310px;
+  margin-bottom: 25px;
+}
+.cardIcon {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: #536b48;
+}
+.createCard:after {
+  content: '♘';
+  position: absolute;
+  right: 10px;
+  bottom: -55px;
+  font-size: 230px;
+  line-height: 1;
+  color: #78866712;
+  pointer-events: none;
+}
+.joinCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.joinCard h2 {
+  margin: 18px 0 13px;
+}
+.joinForm {
+  display: flex;
+  gap: 12px;
+  margin-top: 27px;
+}
+.joinForm input {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  max-width: 164px;
+  font-family: monospace;
+  font-size: 18px;
+}
+.joinForm button {
+  white-space: nowrap;
+  gap: 8px;
+  flex: 1;
+  justify-content: center;
+}
+.roomsSection {
+  margin-top: 45px;
+}
+@media (max-width: 1000px) {
+  .joinForm {
+    flex-direction: column;
+  }
+  .joinForm input {
+    max-width: none;
+  }
+}
+@media (max-width: 700px) {
+  .lobby {
+    padding: 34px 0 40px;
+  }
+  .pageHeading {
+    display: block;
+  }
+  .pageHeading > p {
+    text-align: left;
+    margin-top: 15px;
+  }
+  .pageHeading h1 {
+    font-size: 35px;
+  }
+  .lobbyActions {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .lobbyActions section {
+    padding: 26px;
+  }
+  .joinForm {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .joinForm input {
+    flex: 1;
+    min-width: 100px;
+  }
+  .joinForm button {
+    font-size: 11px;
+  }
+  .roomsSection {
+    margin-top: 30px;
+  }
+}

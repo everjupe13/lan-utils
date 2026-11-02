@@ -1,0 +1,18 @@
+.errorBanner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f7e8df;
+  border: 1px solid #e8c6b3;
+  padding: 12px 18px;
+  border-radius: 6px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #844f37;
+}
+.errorBanner button {
+  border: 0;
+  background: none;
+  color: inherit;
+  font-size: 22px;
+}
