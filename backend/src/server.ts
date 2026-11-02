@@ -20,7 +20,11 @@ const defaultOrigins = [...frontendHosts].flatMap((address) => [
 const origins = new Set(
   (process.env.FRONTEND_ORIGINS?.split(',') ?? defaultOrigins).map((v) => v.trim()),
 );
-const { server, wss, files } = createApplication(origins, undefined, uploadOptions(process.env));
+export const { server, wss, files } = createApplication(
+  origins,
+  undefined,
+  uploadOptions(process.env),
+);
 process.once('exit', files.disposeSync);
 server.listen(port, host, () => {
   console.log(`Local hub: http://localhost:${port}`);

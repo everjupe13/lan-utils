@@ -153,6 +153,10 @@ test('volume settings are validated and converted from megabytes to bytes', () =
     maxFileBytes: 25 * 1024 * 1024,
     maxTotalBytes: 500 * 1024 * 1024,
   });
+  assert.equal(
+    uploadOptions({ UPLOAD_DIRECTORY: '/tmp/nearby-uploads' }).root,
+    '/tmp/nearby-uploads',
+  );
   assert.throws(() => uploadOptions({ UPLOAD_MAX_MB: '-1' }));
   assert.throws(() => uploadOptions({ UPLOAD_TOTAL_MB: 'NaN' }));
   assert.throws(() => new FileStore({ maxFileBytes: 20, maxTotalBytes: 10 }));

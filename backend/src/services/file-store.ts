@@ -26,6 +26,7 @@ export function uploadOptions(env: NodeJS.ProcessEnv): FileStoreOptions {
     return value * 1024 * 1024;
   };
   return {
+    ...(env.UPLOAD_DIRECTORY ? { root: env.UPLOAD_DIRECTORY } : {}),
     maxFileBytes: megabytes('UPLOAD_MAX_MB', 25),
     maxTotalBytes: megabytes('UPLOAD_TOTAL_MB', 500),
   };
